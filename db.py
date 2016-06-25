@@ -18,7 +18,7 @@ class MongoDBPipeline(object):
         # connection = MongoClient(DB['address'], replicaSet=DB['replicaSet'])
         # db = connection[self.db]
         # self.collection = db[self.col]
-        print 'db is ['+db+']'
+        #print 'db is ['+db+']'
         self.db = db
         self.col = col
         #connection = pymongo.Connection(self.server,self.port)
