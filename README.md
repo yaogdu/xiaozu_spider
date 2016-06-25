@@ -3,3 +3,6 @@
 it will simply save posts info to mongodb
 
 TBC
+
+
+license:MIT
