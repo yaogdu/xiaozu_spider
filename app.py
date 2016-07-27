@@ -22,6 +22,7 @@ from pyquery import PyQuery as pq
 from db import MongoDBPipeline
 
 from test import DB
+from test import skip
 
 reload(sys)
 sys.setdefaultencoding('utf8')
@@ -117,7 +118,13 @@ class spider(object):
                     if sub_list !=None:
                         sub_content = []
                         for tag in sub_list:
-                            sub_content.append(tag)
+                            if tag != ' ':
+                                sub_content.append(tag)
+
+
+                        ## filter skipped words
+                        if sub_content != None and sub_content.__len__()>0:
+                            sub_content = list(set(sub_content).difference(set(skip)))
 
                         i['sub_list'] = sub_content
                 else:
